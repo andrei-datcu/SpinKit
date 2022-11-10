@@ -9,12 +9,14 @@
       </div>
  *
  */
+@use "sass:math";
+
 @import "../variables";
 
 .sk-folding-cube {
   $cubeCount: 4;
   $animationDuration: 2.4s;
-  $delayRange: $animationDuration/2;
+  $delayRange: $animationDuration*0.5;
 
   margin: $spinkit-spinner-margin;
   width: $spinkit-size;
@@ -51,7 +53,7 @@
 
   @for $i from 2 through $cubeCount {
     .sk-cube#{$i}:before {
-      animation-delay: $delayRange / $cubeCount * ($i - 1);
+      animation-delay: math.div($delayRange, $cubeCount) * ($i - 1);
     }
   }
 }

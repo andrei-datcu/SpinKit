@@ -17,6 +17,8 @@
       </div>
  *
  */
+@use "sass:math";
+
 @import "../variables";
 
 .sk-circle {
@@ -48,11 +50,11 @@
   }
 
   @for $i from 2 through $circleCount {
-    .sk-circle#{$i} { transform: rotate(360deg / $circleCount * ($i - 1)); }
+    .sk-circle#{$i} { transform: rotate(math.div(360deg, $circleCount) * ($i - 1)); }
   }
 
   @for $i from 2 through $circleCount {
-    .sk-circle#{$i}:before { animation-delay: - $animationDuration + $animationDuration / $circleCount * ($i - 1); }
+    .sk-circle#{$i}:before { animation-delay: - $animationDuration + math.div($animationDuration, $circleCount) * ($i - 1); }
   }
 }
 

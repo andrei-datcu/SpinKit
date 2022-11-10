@@ -18,8 +18,8 @@
   text-align: center;
 
   .sk-child {
-    width: $spinkit-size / 2;
-    height: $spinkit-size / 2;
+    width: $spinkit-size * 0.5;
+    height: $spinkit-size * 0.5;
     background-color: $spinkit-spinner-color;
 
     border-radius: 100%;
@@ -28,7 +28,7 @@
   }
 
   .sk-bounce1 { animation-delay: -$delayRange; }
-  .sk-bounce2 { animation-delay: -$delayRange / 2; }
+  .sk-bounce2 { animation-delay: -$delayRange * 0.5; }
 }
 
 @keyframes sk-three-bounce {
